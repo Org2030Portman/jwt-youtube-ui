@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment.prod';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { UserAuthService } from './user-auth.service';
@@ -6,7 +7,7 @@ import { UserAuthService } from './user-auth.service';
   providedIn: 'root',
 })
 export class UserService {
-  PATH_OF_API = 'http://localhost:9090';
+  PATH_OF_API = environment.PATH_OF_API;
 
   requestHeader = new HttpHeaders({ 'No-Auth': 'True' });
   constructor(
